@@ -1,2 +1,2 @@
 # monty
-An interpreter for Monty scripting language. 
+An interpreter for Monty scripting language.

@@ -2,9 +2,9 @@
 
 /**
  * err_usage - wrong usage of monty
- * 
+ *
  * Description: If the argument to monty program is less than 2
- * Returns: nothing
+ * Return: nothing
  */
 void err_usage(void)
 {
@@ -18,7 +18,7 @@ void err_usage(void)
  *
  * Description: The program is run if it is impossible to open a file
  *
- * Returns: nothing
+ * Return: nothing
  */
 void err_file_open(char *filename)
 {

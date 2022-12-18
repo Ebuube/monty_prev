@@ -1,14 +1,13 @@
 #include "monty.h"
 
 /**
- * main - main program for monty
+ * main - The main program for monty
  * @argc: argument count
  * @argv: argument vector
  *
- * Description: Usage
- * monty <file>
+ * Description: Usage is  `monty <file>`
  *
- * Returns: returns EXIT_SUCCESS always
+ * Return: returns EXIT_SUCCESS always
  */
 int main(int argc, char *argv[])
 {
