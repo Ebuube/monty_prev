@@ -8,13 +8,14 @@
  *
  * Return: EXIT_SUCCESS if successful
  */
-int run_monty(UNUSED FILE *fd_file)
+int run_monty(UNUSED FILE * fd_file)
 {
 	UNUSED char *line;
 	size_t BUFSIZE = 256;
 	size_t line_num = 0;
-	char *delim = " \t";
-	char *args[2] = {0, 0};
+	UNUSED char *delim = " \t\n";
+	UNUSED char *args[2] = {0, 0};
+	void (*op_func)(stack_t **stack, unsigned int line_number);
 
 	for (line_num = 1; getline(&line, &BUFSIZE, fd_file) != -1; line_num++)
 	{
@@ -22,11 +23,22 @@ int run_monty(UNUSED FILE *fd_file)
 		args[0] = strtok(line, delim);	/* get the first two tokens */
 		args[1] = strtok(NULL, delim);
 
-		printf("args[0] = %s\t: args[1] = %s\n", args[0], args[1]);
+		if (args[0] == NULL)
+		{
+			printf("BLANK LINE\n");
+			continue;
+		}
+		else
+		{
+			printf("args[0] = %s\t: args[1] = %s\n", args[0], args[1]);
+			op_func = get_opfunc(args[0]);
+			/* start from here */
+			/* create the get_opfunc() function */
+		}
 	}
 
-	/* getline returns (-1) at EOF or allocation error */
-	printf("\nDONE READING FILE\n");	/* test */
+	printf("\nDONE READING FILE\n\a");	/* test */
+
 	/* In a loop */
 		/* read first line */
 

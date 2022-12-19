@@ -26,5 +26,7 @@ int main(int argc, char *argv[])
 	/* execute file */
 	run_monty(fd_file);
 
+	fclose(fd_file);
+
 	return (EXIT_SUCCESS);
 }

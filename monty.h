@@ -44,6 +44,7 @@ typedef struct instruction_s
 
 /* externs */
 extern int MONTY_MODE;
+extern instruction_t instructions;
 
 
 /* macros and constants */
@@ -56,5 +57,48 @@ extern int MONTY_MODE;
 /* function prototypes */
 int run_monty(FILE *fd_file);
 char **tokenize_2_tk(char *str);
+
+#ifdef _NOTHING_
+	UNUSED instruction_t instructions[] = {
+		{"push", monty_push},
+		{"pint", monty_pint},
+		{"pop", monty_pop},
+		{"swap", monty_swap},
+		{"add", monty_add},
+		{"nop", monty_nop},
+		{"sub", monty_sub},
+		{"div", monty_div},
+		{"mul", monty_mul},
+		{"mod", monty_mod},
+		{"#", monty_comment},
+		{"pchar", monty_pchar},
+		{"pstr", monty_pstr},
+		{"rotl", monty_rotl},
+		{"rotr", monty_rotr},
+		{"stack", monty_stack},
+		{"queue", monty_queue},
+		{NULL, NULL}
+	};
+#endif
+
+/* monty operations */
+void monty_push(stack_t **stack, unsigned int line_number);
+void monty_pint(stack_t **stack, unsigned int line_number);
+void monty_pop(stack_t **stack, unsigned int line_number);
+void monty_swap(stack_t **stack, unsigned int line_number);
+void monty_add(stack_t **stack, unsigned int line_number);
+void monty_nop(stack_t **stack, unsigned int line_number);
+void monty_sub(stack_t **stack, unsigned int line_number);
+void monty_div(stack_t **stack, unsigned int line_number);
+void monty_mul(stack_t **stack, unsigned int line_number);
+void monty_mod(stack_t **stack, unsigned int line_number);
+void monty_comment(stack_t **stack, unsigned int line_number);
+void monty_pchar(stack_t **stack, unsigned int line_number);
+void monty_pstr(stack_t **stack, unsigned int line_number);
+void monty_rotl(stack_t **stack, unsigned int line_number);
+void monty_rotr(stack_t **stack, unsigned int line_number);
+void monty_stack(stack_t **stack, unsigned int line_number);
+void monty_queue(stack_t **stack, unsigned int line_number);
+
 
 #endif	/* _MONTY_H */
