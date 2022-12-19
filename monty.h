@@ -41,10 +41,18 @@ typedef struct instruction_s
 } instruction_t;
 
 
-/* externs and defines */
-extern MONTY_MODE;
+/* externs */
+extern int MONTY_MODE;
+
+
+/* macros and constants */
 #define STACK 0
 #define QUEUE 1
 
+#define UNUSED __attribute__((unused))
+
+
+/* function prototypes */
+int run_monty(FILE *fd_file);
 
 #endif	/* _MONTY_H */
