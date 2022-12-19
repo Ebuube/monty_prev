@@ -1,4 +1,5 @@
 #include "monty.h"
+#include "error.h"
 
 /**
  * main - The main program for monty
