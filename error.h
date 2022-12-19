@@ -10,5 +10,6 @@
 
 void err_usage(void);
 void err_file_open(char *filename);
+void err_malloc(void);
 
 #endif	/* _ERROR_H */

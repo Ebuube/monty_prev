@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 	FILE *fd_file = NULL;
 
 	/* check for correct usage */
-	if (argc < 2)
+	if (argc != 2)
 		err_usage();
 
 	/* open file */

@@ -11,19 +11,22 @@
 int run_monty(UNUSED FILE *fd_file)
 {
 	UNUSED char *line;
-	size_t nread = 0;
 	size_t BUFSIZE = 256;
+	size_t line_num = 0;
+	char *delim = " \t";
+	char *args[2] = {0, 0};
 
-	nread = getline(&line, &BUFSIZE, fd_file);
-	if (nread > BUFSIZE - 1 && line[nread] != '\n')
+	for (line_num = 1; getline(&line, &BUFSIZE, fd_file) != -1; line_num++)
 	{
-		printf("VERY LONG LINE");
-		exit(EXIT_FAILURE);
+		printf("\nline %ld: %s\n", line_num, line);
+		args[0] = strtok(line, delim);	/* get the first two tokens */
+		args[1] = strtok(NULL, delim);
+
+		printf("args[0] = %s\t: args[1] = %s\n", args[0], args[1]);
 	}
-		
-	printf("line: %s\nnread = %ld\n", line, nread);
+
 	/* getline returns (-1) at EOF or allocation error */
-	printf("\nHELLO I AM WORKING\n");	/* test */
+	printf("\nDONE READING FILE\n");	/* test */
 	/* In a loop */
 		/* read first line */
 

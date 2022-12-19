@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 
 
@@ -54,5 +55,6 @@ extern int MONTY_MODE;
 
 /* function prototypes */
 int run_monty(FILE *fd_file);
+char **tokenize_2_tk(char *str);
 
 #endif	/* _MONTY_H */

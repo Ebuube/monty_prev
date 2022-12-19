@@ -29,3 +29,15 @@ void err_file_open(char *filename)
 	fprintf(stderr, "Error: Can\'t open file %s\n", filename);
 	exit(EXIT_FAILURE);
 }
+
+
+/**
+ * err_malloc - error message for malloc failure
+ *
+ * Return: nothing
+ */
+void err_malloc(void)
+{
+	fprintf(stderr, "Error: malloc failed\n");
+	exit(EXIT_FAILURE);
+}
