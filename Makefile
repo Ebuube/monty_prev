@@ -8,7 +8,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89
 SRC = $(wildcard *.c)
 
 # Object files
-OBJ = $(SRC: .c = .o)
+OBJ := $(SRC:.c=.o)
 
 # Name of executable
 NAME = monty
