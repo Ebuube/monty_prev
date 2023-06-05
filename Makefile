@@ -1,6 +1,28 @@
+# Compiler
+CC = gcc
 
-all: 
-	gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o test.exe
+# Compiler flags
+CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89
 
-clean:
-	rm test.exe
+# Source code
+SRC = $(wildcard *.c)
+
+# Object files
+OBJ = $(SRC: .c = .o)
+
+# Name of executable
+NAME = monty
+
+# Source code checker
+CHECKER = betty
+
+all: $(OBJ)
+	$(CC) $(CFLAGS) $? -o $(NAME)
+
+.PHONY: clean check
+
+clean:	# remove object files and executable
+	$(RM) $(OBJ) $(NAME)
+
+check: # Ensure source codes are `betty` compliant
+	$(CHECKER) $(SRC)
